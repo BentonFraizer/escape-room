@@ -1,4 +1,6 @@
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled, { css } from 'styled-components';
+// @ts-expect-error TS(2307): Cannot find module 'components/common/common' or i... Remove this comment to see the full error message
 import { Link } from 'components/common/common';
 
 const Tabs = styled.ul`
@@ -25,7 +27,9 @@ const TabItem = styled.li`
   &:not(:last-of-type) {
     padding-right: 40px;
     margin-right: 39px;
-    border-right: 1px solid ${({ theme }) => theme.color.gray};
+    border-right: 1px solid ${({
+  theme
+}: any) => theme.color.gray};
   }
 
   @media (max-width: 1110px) {
@@ -42,12 +46,16 @@ const TabBtn = styled.button.attrs({ type: 'button' })`
   padding: 0;
 
   font-family: inherit;
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({
+  theme
+}: any) => theme.font.semibase};
   line-height: 140%;
   letter-spacing: -0.02em;
   font-weight: 700;
 
-  color: ${({ theme }) => theme.color.whisper2};
+  color: ${({
+  theme
+}: any) => theme.color.whisper2};
   background: transparent;
   border: none;
   cursor: pointer;
@@ -58,14 +66,20 @@ const TabBtn = styled.button.attrs({ type: 'button' })`
 
   &:focus span,
   &:hover span {
-    border-bottom: 2px solid ${({ theme }) => theme.color.tangerine};
+    border-bottom: 2px solid ${({
+  theme
+}: any) => theme.color.tangerine};
   }
 
-  ${({ isActive }) =>
+  ${({
+  isActive
+}: any) =>
     isActive &&
     css`
       span {
-        border-bottom: 2px solid ${({ theme }) => theme.color.tangerine};
+        border-bottom: 2px solid ${({
+      theme
+    }: any) => theme.color.tangerine};
       }
     `}
 `;
@@ -147,10 +161,14 @@ const QuestTitle = styled.h2`
   margin-bottom: 16px;
   padding: 0;
 
-  font-size: ${({ theme }) => theme.font.medium};
+  font-size: ${({
+  theme
+}: any) => theme.font.medium};
   line-height: 120%;
   font-weight: 700;
-  color: ${({ theme }) => theme.color.white};
+  color: ${({
+  theme
+}: any) => theme.color.white};
   word-break: break-word;
   overflow: hidden;
 `;
@@ -183,14 +201,20 @@ const QuestFeatureItem = styled.li`
   word-break: break-word;
   overflow: hidden;
 
-  font-size: ${({ theme }) => theme.font.small};
+  font-size: ${({
+  theme
+}: any) => theme.font.small};
   line-height: 144%;
-  color: ${({ theme }) => theme.color.whisper2};
+  color: ${({
+  theme
+}: any) => theme.color.whisper2};
 
   &:not(:last-of-type) {
     padding-right: 13px;
     margin-right: 12px;
-    border-right: 1px solid ${({ theme }) => theme.color.darkerGray};
+    border-right: 1px solid ${({
+  theme
+}: any) => theme.color.darkerGray};
   }
 
   svg {

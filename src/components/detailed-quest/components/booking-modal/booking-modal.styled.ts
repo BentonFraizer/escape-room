@@ -1,5 +1,8 @@
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components';
+// @ts-expect-error TS(2307): Cannot find module 'components/common/common' or i... Remove this comment to see the full error message
 import { Button } from 'components/common/common';
+// @ts-expect-error TS(2307): Cannot find module 'assets/img/icon-tick.svg' or i... Remove this comment to see the full error message
 import IconTick from 'assets/img/icon-tick.svg';
 
 const BlockLayer = styled.div`
@@ -10,7 +13,9 @@ const BlockLayer = styled.div`
   width: 100vw;
   height: 100vh;
 
-  background-color: ${({ theme }) => theme.color.eclipse};
+  background-color: ${({
+  theme
+}: any) => theme.color.eclipse};
 `;
 
 const Modal = styled.section`
@@ -25,7 +30,9 @@ const Modal = styled.section`
   overflow-y: auto;
   overflow-x: hidden;
 
-  background-color: ${({ theme }) => theme.color.nero2};
+  background-color: ${({
+  theme
+}: any) => theme.color.nero2};
   transform: translateX(-50%) translateY(-50%);
   border-radius: 3px;
 `;
@@ -62,10 +69,14 @@ const ModalTitle = styled.h2`
   margin-bottom: 39px;
   padding: 0;
 
-  font-size: ${({ theme }) => theme.font.formsHeading};
+  font-size: ${({
+  theme
+}: any) => theme.font.formsHeading};
   line-height: 120%;
   font-weight: 800;
-  color: ${({ theme }) => theme.color.white};
+  color: ${({
+  theme
+}: any) => theme.color.white};
 `;
 
 const BookingForm = styled.form`
@@ -88,7 +99,9 @@ const BookingField = styled.p`
 
 const BookingLabel = styled.label`
   margin-bottom: 15px;
-  color: ${({ theme }) => theme.color.whisper2};
+  color: ${({
+  theme
+}: any) => theme.color.whisper2};
 `;
 
 const BookingInput = styled.input`
@@ -99,13 +112,17 @@ const BookingInput = styled.input`
 
   font-family: inherit;
 
-  color: ${({ theme }) => theme.color.white};
+  color: ${({
+  theme
+}: any) => theme.color.white};
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 3px;
 
   &::placeholder {
-    color: ${({ theme }) => theme.color.whisper};
+    color: ${({
+  theme
+}: any) => theme.color.whisper};
     opacity: 0.64;
   }
 
@@ -124,14 +141,20 @@ const BookingSubmit = styled(Button)`
   padding-bottom: 16px;
   padding-left: 34px;
 
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({
+  theme
+}: any) => theme.font.semibase};
   line-height: 16px;
   letter-spacing: 0.03em;
-  background-color: ${({ theme }) => theme.color.pinkSwan};
+  background-color: ${({
+  theme
+}: any) => theme.color.pinkSwan};
 
   &:focus,
   &:hover {
-    background-color: ${({ theme }) => theme.color.gray};
+    background-color: ${({
+  theme
+}: any) => theme.color.gray};
   }
 `;
 
@@ -162,7 +185,9 @@ const BookingCheckboxLabel = styled.label`
 
   &::before {
     content: '';
-    background-color: ${({ theme }) => theme.color.tangerine};
+    background-color: ${({
+  theme
+}: any) => theme.color.tangerine};
     border-radius: 4px;
   }
 
@@ -201,9 +226,13 @@ const BookingCheckboxInput = styled.input.attrs({
 `;
 
 const BookingCheckboxText = styled.span`
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({
+  theme
+}: any) => theme.font.semibase};
   line-height: 144%;
-  color: ${({ theme }) => theme.color.whisper2};
+  color: ${({
+  theme
+}: any) => theme.color.whisper2};
 `;
 
 const BookingLegalLink = styled.a`

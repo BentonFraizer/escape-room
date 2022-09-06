@@ -1,4 +1,6 @@
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled, { css } from 'styled-components';
+// @ts-expect-error TS(2307): Cannot find module 'components/common/common' or i... Remove this comment to see the full error message
 import { Container, Link as RouterLink } from 'components/common/common';
 
 const StyledHeader = styled.header`
@@ -67,40 +69,56 @@ const LinkItem = styled.li`
 const Link = styled(RouterLink)`
   display: block;
   max-width: 100px;
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({
+  theme
+}: any) => theme.font.semibase};
   line-height: 16px;
   letter-spacing: 0.03em;
   font-weight: 600;
   text-transform: uppercase;
 
-  color: ${({ theme }) => theme.color.whiteSmoke};
+  color: ${({
+  theme
+}: any) => theme.color.whiteSmoke};
 
-  ${({ $isActiveLink }) =>
+  ${({
+  $isActiveLink
+}: any) =>
     $isActiveLink &&
     css`
-      color: ${({ theme }) => theme.color.tangerine};
+      color: ${({
+      theme
+    }: any) => theme.color.tangerine};
     `}
 
   &:focus,
   &:hover {
-    color: ${({ theme }) => theme.color.tangerine};
+    color: ${({
+  theme
+}: any) => theme.color.tangerine};
   }
 `;
 
 const Phone = styled.a`
   margin-top: 17px;
   margin-left: auto;
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({
+  theme
+}: any) => theme.font.semibase};
   line-height: 16px;
   letter-spacing: 0.03em;
   font-weight: 600;
-  color: ${({ theme }) => theme.color.whiteSmoke};
+  color: ${({
+  theme
+}: any) => theme.color.whiteSmoke};
 
   font-feature-settings: 'pnum' on, 'lnum' on;
 
   &:focus,
   &:hover {
-    color: ${({ theme }) => theme.color.tangerine};
+    color: ${({
+  theme
+}: any) => theme.color.tangerine};
   }
 `;
 

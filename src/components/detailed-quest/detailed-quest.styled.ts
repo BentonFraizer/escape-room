@@ -1,4 +1,6 @@
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components';
+// @ts-expect-error TS(2307): Cannot find module 'components/common/common' or i... Remove this comment to see the full error message
 import { Button } from 'components/common/common';
 
 const Main = styled.main`
@@ -34,11 +36,15 @@ const PageTitle = styled.h1`
   margin: 0;
   padding: 0;
 
-  font-size: ${({ theme }) => theme.font.large};
+  font-size: ${({
+  theme
+}: any) => theme.font.large};
   line-height: 95%;
   font-weight: 900;
   letter-spacing: -0.03em;
-  color: ${({ theme }) => theme.color.white};
+  color: ${({
+  theme
+}: any) => theme.color.white};
   text-transform: uppercase;
   overflow-wrap: anywhere;
 `;
@@ -49,9 +55,13 @@ const PageSubtitle = styled.p`
   padding: 0;
   padding-left: 7px;
 
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({
+  theme
+}: any) => theme.font.semibase};
   line-height: 144%;
-  color: ${({ theme }) => theme.color.tangerine};
+  color: ${({
+  theme
+}: any) => theme.color.tangerine};
 `;
 
 const PageDescription = styled.div`
@@ -91,10 +101,14 @@ const FeaturesItem = styled.li`
 const FeatureTitle = styled.span`
   margin-left: 9px;
 
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({
+  theme
+}: any) => theme.font.semibase};
   line-height: 144%;
   font-weight: 400;
-  color: ${({ theme }) => theme.color.whisper2};
+  color: ${({
+  theme
+}: any) => theme.color.whisper2};
 `;
 
 const QuestDescription = styled.p`
@@ -103,7 +117,9 @@ const QuestDescription = styled.p`
   padding: 0;
 
   line-height: 150%;
-  color: ${({ theme }) => theme.color.whisper2};
+  color: ${({
+  theme
+}: any) => theme.color.whisper2};
   letter-spacing: 0.013em;
 `;
 

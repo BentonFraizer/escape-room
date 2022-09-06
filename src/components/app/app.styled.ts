@@ -1,9 +1,16 @@
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import { createGlobalStyle } from 'styled-components';
+// @ts-expect-error TS(2307): Cannot find module 'assets/fonts/raleway-regular.w... Remove this comment to see the full error message
 import RalewayRegularWoff2 from 'assets/fonts/raleway-regular.woff2';
+// @ts-expect-error TS(2307): Cannot find module 'assets/fonts/raleway-medium.wo... Remove this comment to see the full error message
 import RalewayMediumWoff2 from 'assets/fonts/raleway-medium.woff2';
+// @ts-expect-error TS(2307): Cannot find module 'assets/fonts/raleway-semibold.... Remove this comment to see the full error message
 import RalewaySemiBoldWoff2 from 'assets/fonts/raleway-semibold.woff2';
+// @ts-expect-error TS(2307): Cannot find module 'assets/fonts/raleway-bold.woff... Remove this comment to see the full error message
 import RalewayBoldWoff2 from 'assets/fonts/raleway-bold.woff2';
+// @ts-expect-error TS(2307): Cannot find module 'assets/fonts/raleway-extrabold... Remove this comment to see the full error message
 import RalewayExtraBoldWoff2 from 'assets/fonts/raleway-extrabold.woff2';
+// @ts-expect-error TS(2307): Cannot find module 'assets/fonts/raleway-black.wof... Remove this comment to see the full error message
 import RalewayBlackWoff2 from 'assets/fonts/raleway-black.woff2';
 
 const GlobalStyle = createGlobalStyle`
@@ -72,19 +79,27 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Raleway', Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: ${({ theme }) => theme.font.base};
+    font-size: ${({
+  theme
+}: any) => theme.font.base};
     line-height: 22.5px;
-    color: ${({ theme }) => theme.color.whisper};
+    color: ${({
+  theme
+}: any) => theme.color.whisper};
     font-feature-settings: 'pnum' on, 'lnum' on;
 
-    background-color: ${({ theme }) => theme.color.nero};
+    background-color: ${({
+  theme
+}: any) => theme.color.nero};
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   a {
-    color: ${({ theme }) => theme.color.whisper};
+    color: ${({
+  theme
+}: any) => theme.color.whisper};
     text-decoration: none;
   }
 
@@ -101,9 +116,13 @@ const GlobalStyle = createGlobalStyle`
 
   /* chrome autofill background removal */
   input:-webkit-autofill {
-    box-shadow: inset 0 0 0 1000px ${({ theme }) => theme.color.white};
+    box-shadow: inset 0 0 0 1000px ${({
+  theme
+}: any) => theme.color.white};
 
-    -webkit-text-fill-color: ${({ theme }) => theme.color.black};
+    -webkit-text-fill-color: ${({
+  theme
+}: any) => theme.color.black};
   }
 
   /* firefox placeholder \ invalid fix + ios bdrs */

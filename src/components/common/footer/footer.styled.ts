@@ -1,5 +1,8 @@
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components';
+// @ts-expect-error TS(2307): Cannot find module 'assets/img/icon-instagram-hove... Remove this comment to see the full error message
 import { ReactComponent as InstagramIcon } from 'assets/img/icon-instagram-hover.svg';
+// @ts-expect-error TS(2307): Cannot find module 'assets/img/icon-vk-hover.svg' ... Remove this comment to see the full error message
 import { ReactComponent as VkIcon } from 'assets/img/icon-vk-hover.svg';
 
 const StyledFooter = styled.footer`
@@ -53,7 +56,9 @@ const StyledVkIcon = styled(VkIcon)`
   }
 
   path {
-    fill: ${({ theme }) => theme.color.nero};
+    fill: ${({
+  theme
+}: any) => theme.color.nero};
   }
 
   &:focus circle,

@@ -1,5 +1,8 @@
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components';
+// @ts-expect-error TS(2307): Cannot find module 'components/common/common' or i... Remove this comment to see the full error message
 import { PageHeading as Heading } from 'components/common/common';
+// @ts-expect-error TS(2307): Cannot find module 'assets/img/contacts-bg.jpg' or... Remove this comment to see the full error message
 import contactsBg from 'assets/img/contacts-bg.jpg';
 
 const Main = styled.main`
@@ -11,7 +14,9 @@ const Main = styled.main`
   background-image: url(${contactsBg});
   background-repeat: no-repeat;
   background-position: top left;
-  background-color: ${({ theme }) => theme.color.nero};
+  background-color: ${({
+  theme
+}: any) => theme.color.nero};
   background-size: cover;
 `;
 
@@ -47,19 +52,25 @@ const ContactsList = styled.dl`
 const ContactTitle = styled.dt`
   margin-bottom: 5px;
 
-  font-size: ${({ theme }) => theme.font.semibase};
+  font-size: ${({
+  theme
+}: any) => theme.font.semibase};
   line-height: 140%;
   font-weight: 700;
   letter-spacing: -0.02em;
 
-  color: ${({ theme }) => theme.color.whisper2};
+  color: ${({
+  theme
+}: any) => theme.color.whisper2};
 `;
 
 const ContactValue = styled.dd`
   margin: 0;
   padding: 0;
 
-  color: ${({ theme }) => theme.color.whisper2};
+  color: ${({
+  theme
+}: any) => theme.color.whisper2};
 
   &:not(:last-of-type) {
     margin-bottom: 30px;
