@@ -1,9 +1,6 @@
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components';
-// @ts-expect-error TS(2307): Cannot find module 'components/common/common' or i... Remove this comment to see the full error message
-import { Button } from 'components/common/common';
-// @ts-expect-error TS(2307): Cannot find module 'assets/img/icon-tick.svg' or i... Remove this comment to see the full error message
-import IconTick from 'assets/img/icon-tick.svg';
+import { Button } from '../../../common/common';
+import IconTick from '../../../../assets/img/icon-tick.svg';
 
 const BlockLayer = styled.div`
   z-index: 10;

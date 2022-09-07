@@ -1,7 +1,5 @@
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled, { css } from 'styled-components';
-// @ts-expect-error TS(2307): Cannot find module 'components/common/common' or i... Remove this comment to see the full error message
-import { Link } from 'components/common/common';
+import { Link } from '../../../common/common';
 
 const Tabs = styled.ul`
   display: flex;
@@ -40,7 +38,7 @@ const TabItem = styled.li`
   }
 `;
 
-const TabBtn = styled.button.attrs({ type: 'button' })`
+const TabBtn = styled.button.attrs({ type: 'button' })<{isActive?: boolean}>`
   display: flex;
   align-items: center;
   padding: 0;
@@ -71,9 +69,7 @@ const TabBtn = styled.button.attrs({ type: 'button' })`
 }: any) => theme.color.tangerine};
   }
 
-  ${({
-  isActive
-}: any) =>
+  ${({isActive}: any) =>
     isActive &&
     css`
       span {

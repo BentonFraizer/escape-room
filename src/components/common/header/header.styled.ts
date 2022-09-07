@@ -1,7 +1,5 @@
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled, { css } from 'styled-components';
-// @ts-expect-error TS(2307): Cannot find module 'components/common/common' or i... Remove this comment to see the full error message
-import { Container, Link as RouterLink } from 'components/common/common';
+import { Container, Link as RouterLink } from '../../../components/common/common';
 
 const StyledHeader = styled.header`
   z-index: 5;
@@ -66,36 +64,26 @@ const LinkItem = styled.li`
   }
 `;
 
-const Link = styled(RouterLink)`
+const Link = styled(RouterLink)<{$isActiveLink?: boolean}>`
   display: block;
   max-width: 100px;
-  font-size: ${({
-  theme
-}: any) => theme.font.semibase};
+  font-size: ${({ theme }: any) => theme.font.semibase};
   line-height: 16px;
   letter-spacing: 0.03em;
   font-weight: 600;
   text-transform: uppercase;
 
-  color: ${({
-  theme
-}: any) => theme.color.whiteSmoke};
+  color: ${({ theme }: any) => theme.color.whiteSmoke};
 
-  ${({
-  $isActiveLink
-}: any) =>
+  ${({ $isActiveLink }: any) =>
     $isActiveLink &&
     css`
-      color: ${({
-      theme
-    }: any) => theme.color.tangerine};
+      color: ${({ theme }: any) => theme.color.tangerine};
     `}
 
   &:focus,
   &:hover {
-    color: ${({
-  theme
-}: any) => theme.color.tangerine};
+    color: ${({ theme }: any) => theme.color.tangerine};
   }
 `;
 

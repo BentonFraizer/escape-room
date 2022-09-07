@@ -1,17 +1,10 @@
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import { createGlobalStyle } from 'styled-components';
-// @ts-expect-error TS(2307): Cannot find module 'assets/fonts/raleway-regular.w... Remove this comment to see the full error message
-import RalewayRegularWoff2 from 'assets/fonts/raleway-regular.woff2';
-// @ts-expect-error TS(2307): Cannot find module 'assets/fonts/raleway-medium.wo... Remove this comment to see the full error message
-import RalewayMediumWoff2 from 'assets/fonts/raleway-medium.woff2';
-// @ts-expect-error TS(2307): Cannot find module 'assets/fonts/raleway-semibold.... Remove this comment to see the full error message
-import RalewaySemiBoldWoff2 from 'assets/fonts/raleway-semibold.woff2';
-// @ts-expect-error TS(2307): Cannot find module 'assets/fonts/raleway-bold.woff... Remove this comment to see the full error message
-import RalewayBoldWoff2 from 'assets/fonts/raleway-bold.woff2';
-// @ts-expect-error TS(2307): Cannot find module 'assets/fonts/raleway-extrabold... Remove this comment to see the full error message
-import RalewayExtraBoldWoff2 from 'assets/fonts/raleway-extrabold.woff2';
-// @ts-expect-error TS(2307): Cannot find module 'assets/fonts/raleway-black.wof... Remove this comment to see the full error message
-import RalewayBlackWoff2 from 'assets/fonts/raleway-black.woff2';
+import RalewayRegularWoff2 from './../../assets/fonts/raleway-regular.woff2';
+import RalewayMediumWoff2 from './../../assets/fonts/raleway-medium.woff2';
+import RalewaySemiBoldWoff2 from './../../assets/fonts/raleway-semibold.woff2';
+import RalewayBoldWoff2 from './../../assets/fonts/raleway-bold.woff2';
+import RalewayExtraBoldWoff2 from './../../assets/fonts/raleway-extrabold.woff2';
+import RalewayBlackWoff2 from './../../assets/fonts/raleway-black.woff2';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
