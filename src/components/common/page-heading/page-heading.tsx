@@ -1,10 +1,6 @@
 import * as S from './page-heading.styled';
 
-const PageHeading = ({
-  children,
-  ...props
-}: any) => (
-
+const PageHeading = ({ children, ...props }: any) => (
   <S.PageHeading {...props}>{children}</S.PageHeading>
 );
 

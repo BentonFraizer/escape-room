@@ -6,23 +6,28 @@ import {
 } from '../common/common';
 import DetailedQuest from '../detailed-quest/detailed-quest';
 import Contacts from '../contacts/contacts';
-import Home from '../../components/home/home';
+import Home from '../home/home';
 import { appTheme } from './common';
 import * as S from './app.styled';
+import NotFoundScreen from '../pages/not-found-screen/not-found-screen';
+import { AppRoute } from '../../consts';
 
 const App = () => (
   <ThemeProvider theme={appTheme}>
     <S.GlobalStyle />
     <Router>
       <Switch>
-        <Route exact path="/quest">
+        <Route exact path={AppRoute.Quest}>
           <DetailedQuest />
         </Route>
-        <Route exact path="/contacts">
+        <Route exact path={AppRoute.Contacts}>
           <Contacts />
         </Route>
-        <Route path="/">
+        <Route exact path={AppRoute.Main}>
           <Home />
+        </Route>
+        <Route path="*">
+          <NotFoundScreen />
         </Route>
       </Switch>
     </Router>
