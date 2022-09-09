@@ -11,7 +11,7 @@ export enum NameSpace {
 
 export enum APIRoute {
   Quests = '/quests',
-  // Login = '/login',
+  Quest = '/quests/',
   // Logout = '/logout',
   // Promo = '/promo',
   // Film = '/films/',

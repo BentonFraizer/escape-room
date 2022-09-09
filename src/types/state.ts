@@ -3,7 +3,7 @@ import { Quest } from './index';
 
 export type SiteData = {
   questsList: Quest[],
-  // film: Film | null,
+  quest: Quest | null,
   isDataLoaded: boolean,
 }
 

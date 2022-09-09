@@ -26,18 +26,18 @@ export const fetchQuestsAction = createAsyncThunk<Quest[], undefined, {
   },
 );
 
-// Зарос одного фильма
-// export const fetchFilmAction = createAsyncThunk<Film, number, {
-//   dispatch: AppDispatch,
-//   state: State,
-//   extra: AxiosInstance
-// }>(
-//   'data/fetchFilm',
-//   async (id: number, {extra: api}) => {
-//     const {data} = await api.get<Film>(`${APIRoute.Film}${id}`);
-//     return data;
-//   },
-// );
+//Зарос одного квеста
+export const fetchQuestAction = createAsyncThunk<Quest, number, {
+  dispatch: AppDispatch,
+  state: State,
+  extra: AxiosInstance
+}>(
+  'data/fetchQuest',
+  async (id: number, {extra: api}) => {
+    const {data} = await api.get<Quest>(`${APIRoute.Quest}${id}`);
+    return data;
+  },
+);
 
 //Запрос похожих фильмов
 // export const fetchSimilarFilmsAction = createAsyncThunk<Film[], number, {

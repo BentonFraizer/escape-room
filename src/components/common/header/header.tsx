@@ -13,12 +13,12 @@ const Header = () => {
   const pathName = window.location.pathname;
 
   useEffect(() => {
-    if (pathName === '/') {
-      setIsActiveLinkQuests(true);
-      setIsActiveLinkContacts(false)
-    } else {
+    if (pathName === '/contacts') {
       setIsActiveLinkQuests(false);
       setIsActiveLinkContacts(true);
+    } else {
+      setIsActiveLinkQuests(true);
+      setIsActiveLinkContacts(false)
     }
   }, [pathName]);
 

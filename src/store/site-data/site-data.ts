@@ -3,7 +3,7 @@ import { NameSpace } from '../../consts';
 import { SiteData } from '../../types/state';
 import {
   fetchQuestsAction,
-  // fetchFilmAction,
+  fetchQuestAction,
   // fetchSimilarFilmsAction,
   // fetchPromoFilmAction, fetchCommentsAction,
   // postCommentAction,
@@ -13,7 +13,7 @@ import {
 
 const initialState: SiteData = {
   questsList: [],
-  // film: null,
+  quest: null,
   isDataLoaded: true,
 };
 
@@ -42,14 +42,14 @@ export const siteData = createSlice({
       .addCase(fetchQuestsAction.fulfilled, (state, action) => {
         state.questsList = action.payload;
         state.isDataLoaded = false;
+      })
+      .addCase(fetchQuestAction.pending, (state) => {
+        state.isDataLoaded = true;
+      })
+      .addCase(fetchQuestAction.fulfilled, (state, action) => {
+        state.quest = action.payload;
+        state.isDataLoaded = false;
       });
-      // .addCase(fetchFilmAction.pending, (state) => {
-      //   state.isDataLoaded = true;
-      // })
-      // .addCase(fetchFilmAction.fulfilled, (state, action) => {
-      //   state.film = action.payload;
-      //   state.isDataLoaded = false;
-      // })
       // .addCase(fetchSimilarFilmsAction.pending, (state) => {
       //   state.isDataLoaded = true;
       // })

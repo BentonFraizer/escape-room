@@ -12,7 +12,8 @@ import { getQuests } from '../../../../store/site-data/selectors';
 import { useEffect } from 'react';
 import { fetchQuestsAction } from '../../../../store/api-actions';
 import { useAppDispatch } from '../../../../hooks';
-import { ComplexityLevel, TYPES } from '../../../../consts';
+import { TYPES } from '../../../../consts';
+import { getComplexityLevel } from '../../../../utils/utils';
 import { getType } from '../../../../store/site-process/selectors';
 import { changeType } from '../../../../store/site-process/site-process';
 
@@ -20,7 +21,7 @@ const QuestsCatalog = () => {
   const questsList = useAppSelector(getQuests);
   const dispatch = useAppDispatch();
   const currentType = useAppSelector(getType);
-  
+
   const filteredQuestsList = questsList.filter((quest) => {
     if (currentType === 'all quests') {
       return questsList;
@@ -28,18 +29,6 @@ const QuestsCatalog = () => {
 
     return quest.type === currentType;
   });
-
-  const getComplexityLevel = (level: string): string => {
-    switch(level) {
-      case ComplexityLevel.Easy:
-        return 'простой';
-      case ComplexityLevel.Medium:
-        return 'средний';
-      case ComplexityLevel.Hard:
-        return 'сложный';
-    }
-    return '';
-  }
 
   const getIconComponent = (type: string):JSX.Element => {
     switch(type) {
