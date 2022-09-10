@@ -11,6 +11,7 @@ import { getQuest } from '../../store/site-data/selectors';
 import { useParams } from 'react-router-dom';
 import { getComplexityLevel } from '../../utils/utils';
 import { TYPES } from '../../consts';
+import NotFoundScreen from '../pages/not-found-screen/not-found-screen'
 
 const DetailedQuest = () => {
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
@@ -25,7 +26,7 @@ const DetailedQuest = () => {
 
   console.log(quest);
   if (!quest) {
-    return null;
+    return <NotFoundScreen/ >;
   }
 
   const { title, description, coverImg, duration, peopleCount, level, type } = quest;
@@ -33,15 +34,15 @@ const DetailedQuest = () => {
   const getType = (currentType: string): string => {
     switch(currentType) {
       case TYPES[1].en.toLowerCase():
-        return 'приключение';
+        return 'Приключения';
       case TYPES[2].en.toLowerCase():
-        return 'ужасы';
+        return 'Ужасы';
       case TYPES[3].en.toLowerCase():
-        return 'мистика';
+        return 'Мистика';
       case TYPES[4].en.toLowerCase():
-        return 'детектив';
+        return 'Детектив';
       case TYPES[5].en.toLowerCase():
-        return 'sci-fi';
+        return 'Sci-fi';
     }
     return '';
   }
