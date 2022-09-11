@@ -194,6 +194,10 @@ const GlobalStyle = createGlobalStyle`
   .prevent-scroll {
     overflow: hidden;
   }
+
+  .error {
+    border: 2px solid orange;
+  }
 `;
 
 export { GlobalStyle };
