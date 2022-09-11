@@ -1,17 +1,13 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
-import { StatusCodes } from 'http-status-codes';
-
-const StatusCodeMapping: Record<number, boolean> = {
-  [StatusCodes.BAD_REQUEST]: true,
-  [StatusCodes.UNAUTHORIZED]: true,
-  [StatusCodes.NOT_FOUND]: true
-};
-
-const shouldDisplayError = (response: AxiosResponse) => !!StatusCodeMapping[response.status];
+import { store } from '../store';
+import { changePostOrderRequestStatus, changePostOrderRequestPendingStatus } from '../store/site-process/site-process';
+import { setPostOrderError } from '../store/site-data/site-data';
 
 const BACKEND_URL = 'http://localhost:3001';
 const REQUEST_TIMEOUT = 5000;
-const NOT_FOUND = 404;
+const CREATED = 201;
+// const NOT_FOUND = 404;
+const BAD_REQUEST = 400;
 
 export const createAPI = (): AxiosInstance => {
 
@@ -24,14 +20,24 @@ export const createAPI = (): AxiosInstance => {
   api.interceptors.response.use(
     (response) => response,
     (error: AxiosError) => {
-      if (error.response?.status === NOT_FOUND) {
-        throw new Error('Смотри файл api.ts. Выброшена ошибка, нужно подкорректировать. Возможно нужно написать вместо сообщения: error.response от Axios');
-      } else if (error.response && shouldDisplayError(error.response)) {
-        throw new Error('Смотри файл api.ts. Выброшена ошибка, нужно подкорректировать. Возможно нужно написать вместо сообщения: error.response от Axios');
+      store.dispatch(changePostOrderRequestPendingStatus(false));
+      if (error.response?.status === BAD_REQUEST) {
+        store.dispatch(setPostOrderError(true));
       }
 
       throw error;
     }
+  );
+
+  //"перехватчик" успешной отправки заказа
+  api.interceptors.response.use(
+    (response: AxiosResponse) => {
+      if (response.status === CREATED) {
+        store.dispatch(changePostOrderRequestStatus(true));
+      }
+
+      return response;
+    },
   );
 
   return api;

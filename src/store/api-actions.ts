@@ -1,15 +1,11 @@
 import { AxiosInstance } from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AppDispatch, State } from '../types/state';
-import { Quest } from '../types';
-// import { postComment, redirectToRoute, changeFilmStatus } from './action';
-import {
-  APIRoute,
-  // AppRoute
-} from '../consts';
-// import { AuthData, UserData, PostCommentData, ChangeFilmStatusData } from '../types';
+import { Quest, FormData } from '../types';
+import { APIRoute } from '../consts';
+import { postOrder } from './action';
 
-// Запрос всех фильмов
+// Запрос всех квестов
 export const fetchQuestsAction = createAsyncThunk<Quest[], undefined, {
   dispatch: AppDispatch,
   state: State,
@@ -39,67 +35,15 @@ export const fetchQuestAction = createAsyncThunk<Quest, number, {
   },
 );
 
-//Запрос похожих фильмов
-// export const fetchSimilarFilmsAction = createAsyncThunk<Film[], number, {
-//   dispatch: AppDispatch,
-//   state: State,
-//   extra: AxiosInstance
-// }>(
-//   'data/fetchSimilarFilms',
-//   async (id: number, {extra: api}) => {
-//     const {data} = await api.get<Film[]>(`${APIRoute.Film}${id}/similar`);
-//     return data;
-//   },
-// );
-
-//Запрос промофильма
-// export const fetchPromoFilmAction = createAsyncThunk<Film, undefined, {
-//   dispatch: AppDispatch,
-//   state: State,
-//   extra: AxiosInstance
-// }>(
-//   'data/fetchPromoFilm',
-//   async (_arg, {extra: api}) => {
-//     const {data} = await api.get<Film>(APIRoute.Promo);
-//     return data;
-//   },
-// );
-
-//Запрос комментариев
-// export const fetchCommentsAction = createAsyncThunk<Comment[], number, {
-//   dispatch: AppDispatch,
-//   state: State,
-//   extra: AxiosInstance
-// }>(
-//   'data/fetchComments',
-//   async (id: number, {extra: api}) => {
-//     const {data} = await api.get<Comment[]>(`${APIRoute.Comments}${id}`);
-//     return data;
-//   },
-// );
-
-//Отправка комментария на сервер
-// export const postCommentAction = createAsyncThunk<void, PostCommentData, {
-//   dispatch: AppDispatch,
-//   state: State,
-//   extra: AxiosInstance
-// }>(
-//   'data/postComment',
-//   async ({comment, rating, filmId}, {dispatch, extra: api}) => {
-//     const {data} = await api.post<PostCommentData>(`${APIRoute.Comments}${filmId}`, {comment, rating});
-//     dispatch(postComment(data));
-//   },
-// );
-
-//Изменение статуса "к просмотру" у фильма
-// export const changeFilmStatusAction = createAsyncThunk<void, ChangeFilmStatusData, {
-//   dispatch: AppDispatch,
-//   state: State,
-//   extra: AxiosInstance
-// }>(
-//   'data/changeFilmStatus',
-//   async ({filmId, status}, {dispatch, extra: api}) => {
-//     const {data} = await api.post<ChangeFilmStatusData>(`${APIRoute.Favorite}/${filmId}/${status}`, {filmId, status});
-//     dispatch(changeFilmStatus(data));
-//   },
-// );
+//Отправка заявки на сервер
+export const postOrderAction = createAsyncThunk<void, FormData, {
+  dispatch: AppDispatch,
+  state: State,
+  extra: AxiosInstance
+}>(
+  'data/postOrder',
+  async ({name, peopleCount, phone, isLegal}, {dispatch, extra: api}) => {
+    const {data} = await api.post<FormData>(APIRoute.Orders, {name, peopleCount, phone, isLegal});
+    dispatch(postOrder(data));
+  },
+);

@@ -12,19 +12,28 @@ import { useParams } from 'react-router-dom';
 import { getComplexityLevel } from '../../utils/utils';
 import { TYPES } from '../../consts';
 import NotFoundScreen from '../pages/not-found-screen/not-found-screen'
+import { getPostOrderRequestStatus } from '../../store/site-process/selectors';
+import { changePostOrderRequestStatus, changePostOrderRequestPendingStatus } from '../../store/site-process/site-process';
 
 const DetailedQuest = () => {
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
   const dispatch = useAppDispatch();
   const {id} = useParams() as {id: string};
   const quest = useAppSelector(getQuest);
-  console.log(quest);
+  const postOrderRequestStatus = useAppSelector(getPostOrderRequestStatus);
 
   useEffect(() => {
     dispatch(fetchQuestAction(Number(id)));
   }, [dispatch, id])
 
-  console.log(quest);
+  useEffect(() => {
+    if (postOrderRequestStatus) {
+      setIsBookingModalOpened(false);
+      dispatch(changePostOrderRequestStatus(false));
+      dispatch(changePostOrderRequestPendingStatus(false));
+    }
+  }, [dispatch, postOrderRequestStatus])
+
   if (!quest) {
     return <NotFoundScreen/ >;
   }
@@ -50,6 +59,10 @@ const DetailedQuest = () => {
   const onBookingBtnClick = () => {
     setIsBookingModalOpened(true);
   };
+
+  const handleCloseBtnClick = () => {
+    setIsBookingModalOpened(false);
+  }
 
   return (
     <MainLayout>
@@ -92,7 +105,7 @@ const DetailedQuest = () => {
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal />}
+        {isBookingModalOpened && <BookingModal onCloseClick={handleCloseBtnClick}/>}
       </S.Main>
     </MainLayout>
   );

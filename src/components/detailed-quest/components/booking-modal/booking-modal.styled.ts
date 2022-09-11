@@ -76,6 +76,11 @@ const ModalTitle = styled.h2`
 }: any) => theme.color.white};
 `;
 
+const ModalErrorMessage = styled.div`
+  margin: 20px auto 0 auto;
+  color: orange;
+`;
+
 const BookingForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -131,7 +136,7 @@ const BookingInput = styled.input`
 
 const BookingSubmit = styled(Button)`
   align-self: center;
-  margin-top: 55px;
+  margin-top: 20px;
   margin-bottom: 21px;
   padding-top: 15px;
   padding-right: 34px;
@@ -242,6 +247,7 @@ export {
   ModalCloseBtn,
   ModalCloseLabel,
   ModalTitle,
+  ModalErrorMessage,
   BookingForm,
   BookingField,
   BookingLabel,

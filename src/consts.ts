@@ -12,11 +12,7 @@ export enum NameSpace {
 export enum APIRoute {
   Quests = '/quests',
   Quest = '/quests/',
-  // Logout = '/logout',
-  // Promo = '/promo',
-  // Film = '/films/',
-  // Comments = '/comments/',
-  // Favorite = '/favorite',
+  Orders = '/orders',
 }
 
 export enum ComplexityLevel {
