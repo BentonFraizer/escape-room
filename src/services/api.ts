@@ -6,7 +6,6 @@ import { setPostOrderError } from '../store/site-data/site-data';
 const BACKEND_URL = 'http://localhost:3001';
 const REQUEST_TIMEOUT = 5000;
 const CREATED = 201;
-// const NOT_FOUND = 404;
 const BAD_REQUEST = 400;
 
 export const createAPI = (): AxiosInstance => {

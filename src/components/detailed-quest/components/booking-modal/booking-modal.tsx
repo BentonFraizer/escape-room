@@ -31,7 +31,7 @@ const BookingModal = ({onCloseClick}: BookingModalProps) => {
     dispatch(postOrderAction(formData));
   };
 
-  const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     if (postOrderError) {
       evt.preventDefault();
@@ -71,7 +71,7 @@ const BookingModal = ({onCloseClick}: BookingModalProps) => {
         <S.BookingForm
           action=""
           id="booking-form"
-          onSubmit={handleSubmit}
+          onSubmit={handleFormSubmit}
         >
           <S.BookingField>
             <S.BookingLabel htmlFor="booking-name">Ваше Имя</S.BookingLabel>

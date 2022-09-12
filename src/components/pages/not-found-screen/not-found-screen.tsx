@@ -1,11 +1,12 @@
 import logo from '../../../assets/img/logo.svg'
 import * as S from './not-found-screen.styled';
+import { AppRoute } from '../../../consts';
 
 const NotFoundScreen = () => (
   <S.Main>
     <S.StyledHeader>
       <S.HeaderWrapper>
-          <S.LogoLink to="/">
+          <S.LogoLink to={AppRoute.Main}>
             <S.Image src={logo} alt="Логотип Escape Room" width="134" height="50" />
           </S.LogoLink>
       </S.HeaderWrapper>

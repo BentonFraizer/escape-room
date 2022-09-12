@@ -6,7 +6,6 @@ const initialState: SiteProcess = {
   type: 'all quests',
   isPostOrderRequestPendind: false,
   isPostOrderRequestSuccessful: false,
-
 };
 
 export const siteProcess = createSlice({
