@@ -5,7 +5,7 @@
 "Escape room" is a website of a company that conducts game quests of various subjects and difficulty levels.
 On the website you can find an interesting quest on your favorite topic and find out all the details about it.
 
-[Check the Demo](https://external.ink?to=/bentonfraizer.github.io/escape-room)
+**This project works locally only**. From your PC.
 
 <img src="https://github.com/BentonFraizer/escape-room/blob/master/.github/Escape-room.png" width="769" />
 
