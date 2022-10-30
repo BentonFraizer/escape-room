@@ -25,7 +25,7 @@ git clone git@github.com:BentonFraizer/escape-room.git
 ```
 2. go into the project folder with:
 ```
-cd what-to-watch/project/
+cd escape-room/
 ```
 3. install all dependencies with:
 ```
@@ -35,3 +35,4 @@ npm install
 ```
 npm start
 ```
+After npm start command will be running local **SERVER** with data for the app, and the **CLIENT**.
